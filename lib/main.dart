@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 //import 'screens/favourite_page.dart';
 //import 'screens/profile_page.dart';
 //import 'screens/signup.dart';
+//import 'screens/manu_navigator.dart';
 import 'screens/splash_screen.dart';
 
 void main() {

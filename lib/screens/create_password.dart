@@ -11,7 +11,7 @@ class CreatePassword extends StatelessWidget {
         children: [
           // Background image
           Image.asset(
-            'assets/nature_background.jpg', // Add your image in the assets folder and update this path
+            'assets/r3.jpg', // Add your image in the assets folder and update this path
             fit: BoxFit.cover,
           ),
           // Transparent overlay

@@ -21,7 +21,7 @@ class _PlantHomePageState extends State<PlantHomePage> {
             icon: Icon(Icons.shopping_cart, color: Colors.green),
             onPressed: () {},
           ),
-        ],
+          ],
         backgroundColor: Colors.green[50],
       ),
       body: Column(

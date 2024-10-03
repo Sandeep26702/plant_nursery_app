@@ -16,7 +16,7 @@ class LoginSignUp extends StatelessWidget {
         children: [
           // Background image
           Image.asset(
-            'assets/lotos.jpeg', // Add your image in the assets folder and update this path
+            'assets/r6.jpg', // Add your image in the assets folder and update this path
             fit: BoxFit.cover,
           ),
           // Transparent overlay for the content
