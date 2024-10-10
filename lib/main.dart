@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:plant_nusery_app/slidebar/about_us.dart';
 //import 'package:plant_nusery_app/screens/login.dart';
 
 //import 'screens/forget_password.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 //import 'screens/signup.dart';
 //import 'screens/manu_navigator.dart';
 import 'screens/splash_screen.dart';
+import 'slidebar/settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: SplashScreen(),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

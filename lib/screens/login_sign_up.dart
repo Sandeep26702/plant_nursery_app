@@ -34,16 +34,16 @@ class LoginSignUp extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.white.withOpacity(0.9),
-                    child: Icon(
+                    child: const Icon(
                       Icons.eco,
                       size: 50,
                       color: Colors.green,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   // "Log in" Text
-                  Text(
+                  const Text(
                     "Welcome to Plant Nursery",
                     style: TextStyle(
                       color: Colors.white,
@@ -51,7 +51,7 @@ class LoginSignUp extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   
                  
                   ElevatedButton(
@@ -60,17 +60,17 @@ class LoginSignUp extends StatelessWidget {
                       
                           Navigator.of(context).push(
                           MaterialPageRoute(
-                           builder: (context) => LoginPage(),
+                           builder: (context) => const LoginPage(),
                          ),
                         );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
+                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ), // button color
                     ),
-                    child: Text(
+                    child: const Text(
                       "Log in",
                       style: TextStyle(
                         color: Colors.black,
@@ -80,7 +80,7 @@ class LoginSignUp extends StatelessWidget {
                     ),
                   ),
                   
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   // Log in button
                   ElevatedButton(
@@ -94,12 +94,12 @@ class LoginSignUp extends StatelessWidget {
                         );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
+                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ), // button color
                     ),
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(
                         color: Colors.black,
@@ -109,7 +109,7 @@ class LoginSignUp extends StatelessWidget {
                     ),
                   ),
                   
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   
                 ],

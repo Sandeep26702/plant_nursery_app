@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+//import 'package:plant_nusery_app/screens/home_screen.dart';
+
+import 'login_sign_up.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,11 +16,11 @@ class ProfilePage extends StatelessWidget {
         //     // Handle back navigation
         //   },
         // ),
-        title: Text('Profile', style: TextStyle(color: Colors.green)),
+        title: const Text('Profile', style: TextStyle(color: Colors.green)),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.edit, color: Colors.green),
+            icon: const Icon(Icons.edit, color: Colors.green),
             onPressed: () {
               // Handle profile edit
             },
@@ -30,29 +35,35 @@ class ProfilePage extends StatelessWidget {
             CircleAvatar(
               radius: 40,
               backgroundColor: Colors.grey[200],
-              child: Icon(Icons.person_add, size: 40, color: Colors.grey),
+              child: const Icon(Icons.person_add, size: 40, color: Colors.grey),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             profileItem(Icons.person, 'Name', 'abc'),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             profileItem(Icons.email, 'E-Mail', 'abc@gmail.com'),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             profileItem(Icons.phone, 'Phone no.', '+91 ******6577'),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             profileItem(Icons.person_outline, 'Gender', 'Male', iconColor: Colors.purple),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                // Handle logout
-              },
+                 
+               Navigator.of(context).push(
+                    MaterialPageRoute(
+                    builder: (context) => const LoginSignUp(),
+                ),
+             ); 
+           },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black, backgroundColor: Colors.green[100],    // text color
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: Text('Logout', style: TextStyle(fontSize: 18)),
+              child: const Text('Logout', style: TextStyle(fontSize: 18)),
+              
             ),
           ],
         ),
@@ -64,13 +75,16 @@ class ProfilePage extends StatelessWidget {
     return Row(
       children: [
         Icon(icon, color: iconColor ?? Colors.black),
-        SizedBox(width: 15),
+        const SizedBox(width: 15),
+        
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            SizedBox(height: 5),
-            Text(subtitle, style: TextStyle(fontSize: 14, color: Colors.grey)),
+            Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 5),
+            Text(subtitle, style: const TextStyle(fontSize: 14, color: Colors.grey)),
+            
+            
           ],
         ),
       ],

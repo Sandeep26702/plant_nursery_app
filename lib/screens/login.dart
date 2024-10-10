@@ -33,16 +33,16 @@ class LoginPage extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.white.withOpacity(0.9),
-                    child: Icon(
+                    child: const Icon(
                       Icons.eco,
                       size: 50,
                       color: Colors.green,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   // "Log in" Text
-                  Text(
+                  const Text(
                     "Log in",
                     style: TextStyle(
                       color: Colors.white,
@@ -50,7 +50,7 @@ class LoginPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   
                   // Input fields for Email/Phone and Password
                   TextField(
@@ -58,13 +58,14 @@ class LoginPage extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.9),
                       label: const Text("Enter your Email"),
+                      hoverColor: const Color.fromARGB(255, 59, 16, 246),
                       hintText: 'Enter Number or Email',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   TextField(
                     obscureText: true,
@@ -78,7 +79,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   // Log in button
                   ElevatedButton(
@@ -91,12 +92,12 @@ class LoginPage extends StatelessWidget {
                         );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
+                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ), // button color
                     ),
-                    child: Text(
+                    child: const Text(
                       "Log in",
                       style: TextStyle(
                         color: Colors.black,
@@ -106,7 +107,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   
                   // Forgot Password link
                   TextButton(
@@ -118,7 +119,7 @@ class LoginPage extends StatelessWidget {
                          ),
                         );
                     },
-                    child: Text(
+                    child: const Text(
                       "Forgot password?",
                       style: TextStyle(
                         color: Colors.red,

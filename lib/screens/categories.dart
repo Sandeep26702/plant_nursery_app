@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 //import 'package:plant_nusery_app/screens/categories.dart';
 
 class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categories', style: TextStyle(color: Colors.green)),
+        title: const Text('Categories', style: TextStyle(color: Colors.green)),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart, color: Colors.green),
+            icon: const Icon(Icons.shopping_cart, color: Colors.green),
             onPressed: () {},
           ),
         ],
@@ -25,7 +27,7 @@ class CategoriesPage extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -38,16 +40,24 @@ class CategoriesPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisCount: 2 ,
+                crossAxisSpacing: 40,
+                mainAxisSpacing: 20,
                 children: [
-                   plantItem('Rose', 'assets/rose.jpg'),
-                  plantItem('Lily', 'assets/lily.jpeg'),
-                  plantItem('Money Plant', 'assets/lotos.jpeg'),
-                  plantItem('Sandalwood', 'assets/rose.jpg'),
-                  plantItem('Dalchini', 'assets/lily.jpeg'),
-                  plantItem('Cucumber', 'assets/lotos.jpeg'),
+                  plantItem('TREES', 'assets/tree.jpg'),
+                   plantItem('FRUIT', 'assets/fruit.jpg'),
+                  plantItem('AQUATIC', 'assets/aquatic.jpg'),
+                  plantItem('Vegitables', 'assets/vegitable.jpg'),
+                  plantItem('Ground Covers', 'assets/grass.jpg'),
+                   plantItem('Annuals', 'assets/rose.jpg'),
+                  plantItem('GARDENING', 'assets/miniplant.jpeg'),
+                  plantItem('SEEDS', 'assets/seeds.jpg'),
+                  plantItem('POTS', 'assets/pot.jpeg'),
+                  plantItem('FERTILIZERS', 'assets/fzr.jpeg'),
+                   
+
+
+                     
                 ],
               ),
             ),
@@ -72,8 +82,8 @@ class CategoriesPage extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 5),
-        Text(name, style: TextStyle(fontSize: 16)),
+        const SizedBox(height: 5),
+        Text(name, style: const TextStyle(fontSize: 16)),
       ],
     );
   }
