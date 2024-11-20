@@ -54,7 +54,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
             onTap: () {
                Navigator.of(context).push(
                     MaterialPageRoute(
-                    builder: (context) => NavigatorPage(),
+                    builder: (context) => const NavigatorPage(),
                 ),
               ); 
             },
@@ -66,7 +66,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
             onTap: () {
               Navigator.of(context).push(
                     MaterialPageRoute(
-                    builder: (context) =>SettingsPage(),
+                    builder: (context) =>const SettingsPage(),
                     ),
                );
              

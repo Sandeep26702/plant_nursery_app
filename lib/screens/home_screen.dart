@@ -1,6 +1,9 @@
+
+
 //import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'manu_navigator.dart';
+
+import 'cart_page.dart';
 //import 'package:plant_nusery_app/screens/categories.dart';
 
 class PlantHomePage extends StatefulWidget {
@@ -14,28 +17,49 @@ class _PlantHomePageState extends State<PlantHomePage> {
  
   @override
   Widget build(BuildContext context) {
+    var name = [
+      'Chery',
+      'Dhatura',
+      'Marigold',
+      'Sunflower',
+      'Lutos',
+      'Lily',
+      
+    ]; 
+     var imgpath = [
+      'chery.jpeg',
+      'dhatura.jpg',
+      'marigold.webp',
+      'sunflower.jpg',
+      'lotos.jpeg',
+      'lily.jpeg',
+      
+      
+    ]; 
+    // var imgmaterials = [
+    //   plantItem('Rose', 'images/rose.jpg'),
+    //               plantItem('Lily', 'images/lily.jpg'),
+    //               plantItem('Money Plant', 'images/money_plant.jpg'),
+    //               plantItem('Sandalwood', 'images/sandal.jpeg'),
+    //               plantItem('Dalchini', 'images/dalchini.jpeg'),
+    //               plantItem('Cucumber', 'images/cucumber.jpg'),
+    // ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home', style: TextStyle(color: Colors.green)),
         centerTitle: true,
-
-     leading: IconButton(
-        icon: const Icon(Icons.menu, color: Colors.green),  // This is the menu icon
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const SidebarMenu()),
-          );
-          // Add functionality for the menu icon here
-        },
-      ),
-
-      actions: [
+        actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.green),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                          MaterialPageRoute(
+                           builder: (context) => const ShoppingCart(),
+                         ),
+                        );
+            },
           ),
-          ],
+        ],
         backgroundColor: Colors.green[50],
       ),
       body: Column(
@@ -57,19 +81,14 @@ class _PlantHomePageState extends State<PlantHomePage> {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: GridView.count(
+              child:GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                children: [
-                  plantItem('Rose', 'assets/rose.jpg'),
-                  plantItem('Lily', 'assets/lily.jpeg'),
-                  plantItem('Money Plant', 'assets/lotos.jpeg'),
-                  plantItem('Sandalwood', 'assets/rose.jpg'),
-                  plantItem('Dalchini', 'assets/lily.jpeg'),
-                  plantItem('Cucumber', 'assets/lotos.jpeg'),
-                ],
-              ),
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+              ), 
+              itemBuilder: (context, index) => plantItem(name[index] ,imgpath[index] ),
+              itemCount: name.length,
+              )
             ),
           ),
         ],

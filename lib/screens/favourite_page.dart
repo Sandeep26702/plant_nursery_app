@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plant_nusery_app/screens/cart_page.dart';
+
+//import 'cart_page.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -14,6 +17,11 @@ class FavoritePage extends StatelessWidget {
             icon: const Icon(Icons.shopping_cart, color: Colors.green),
             onPressed: () {
               // Handle cart action
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                 builder: (context) => const ShoppingCart(),
+                ),
+              );
             },
           ),
         ],
@@ -39,8 +47,8 @@ class FavoritePage extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.all(8),
               children: [
-                favoriteItem('Rose', 'Their stems are usually prickly and their glossy, green leaves have toothed edges.', 'assets/rose.jpg', '\$200.00'),
-                favoriteItem('Rose', 'Their stems are usually prickly and their glossy, green leaves have toothed edges.', 'assets/rose.jpg', '\$200.00'),
+                favoriteItem('Sunflower', 'Their stems are usually prickly and their glossy, green leaves have toothed edges.','sunflower.jpg'),
+                favoriteItem('Marigold', 'Their stems are usually prickly and their glossy, green leaves have toothed edges.', 'marigold.webp'),
               ],
             ),
           ),
@@ -49,7 +57,7 @@ class FavoritePage extends StatelessWidget {
     );
   }
 
-  Widget favoriteItem(String name, String description, String imagePath, String price) {
+  Widget favoriteItem(String name, String description, String imagePath) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -62,6 +70,7 @@ class FavoritePage extends StatelessWidget {
         ),
         title: Text(name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         subtitle: Text(description),
+        
         trailing: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -71,13 +80,13 @@ class FavoritePage extends StatelessWidget {
                 // Handle remove action
               },
             ),
-            Text(price, style: const TextStyle(fontSize: 16)),
-            GestureDetector(
-              onTap: () {
-                // Handle buy action
-              },
-              child: const Text('Buy', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
-            ),
+            //Text(price, style: TextStyle(fontSize: 16)),
+            // GestureDetector(
+            //   onTap: () {
+            //     // Handle buy action
+            //   },
+            //   child: Text('Buy', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
+            // ),
           ],
         ),
       ),

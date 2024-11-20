@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "291799346164",
+    "project_id": "plant-nursery-app-c39bb",
+    "storage_bucket": "plant-nursery-app-c39bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291799346164:android:a794908d9740a20319a7a1",
+        "android_client_info": {
+          "package_name": "com.example.plant_nusery_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtAtgPZaaWkrb4EWM2FlzoGKs1d--3dis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

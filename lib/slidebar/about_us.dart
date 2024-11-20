@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 class about_us extends StatelessWidget {
   const about_us({super.key});
   @override
@@ -54,6 +53,13 @@ class about_us extends StatelessWidget {
                 '• Workshops and community engagement events.',
                 style: TextStyle(fontSize: 16),
               ),
+
+              const Divider(
+                thickness: 3,
+                color: Colors.black,
+                
+              ),
+            
               const SizedBox(height: 20),
               const Text(
                 'Contact Us:',
@@ -62,11 +68,13 @@ class about_us extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
+            
               const SizedBox(height: 10),
               const Text(
-                'Email: info@plantnursery.com\n'
-                'Phone: +123 456 7890\n'
-                'Address: 123 Green Lane, Plant City, Country',
+                'Email: ssharma931@rku.ac.in\n'
+                'Phone: +918936026702\n'
+                'Address: RK University , Rajkot',
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 20),

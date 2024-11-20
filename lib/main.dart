@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 //import 'screens/signup.dart';
 //import 'screens/manu_navigator.dart';
 import 'screens/splash_screen.dart';
-import 'slidebar/settings.dart';
+//import 'slidebar/settings.dart';
 
 void main() {
   runApp(const MyApp());

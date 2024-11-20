@@ -12,7 +12,7 @@ class _SettingsPageState extends State<SettingsPage> {
   bool isDarkTheme = false;
 
   // List of supported languages
-  List<String> languages = ['English', 'Spanish', 'French', 'German'];
+  List<String> languages = ['English', 'hindi', 'punjabi', 'bangali'];
   String selectedLanguage = 'English'; // default language
 
   // Toggle theme function
@@ -33,6 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(

@@ -17,10 +17,10 @@ class NavigatorPage extends StatefulWidget {
 class _NavigatorPageState extends State<NavigatorPage> {
   int myIndex = 0;
   List screenList= [
-    PlantHomePage(),
-    FavoritePage(),
-    CategoriesPage(),
-    ProfilePage(),
+    const PlantHomePage(),
+    const FavoritePage(),
+    const CategoriesPage(),
+    const ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -58,7 +58,7 @@ class LoginPage extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.9),
                       label: const Text("Enter your Email"),
-                      hoverColor: const Color.fromARGB(255, 59, 16, 246),
+                      hoverColor: const Color.fromARGB(255, 244, 239, 239),
                       hintText: 'Enter Number or Email',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -87,7 +87,7 @@ class LoginPage extends StatelessWidget {
                       // Implement login functionality here
                       Navigator.of(context).push(
                           MaterialPageRoute(
-                           builder: (context) => NavigatorPage(),
+                           builder: (context) => const NavigatorPage(),
                          ),
                         );
                     },
@@ -115,7 +115,7 @@ class LoginPage extends StatelessWidget {
                       // Implement forgot password functionality here
                       Navigator.of(context).push(
                           MaterialPageRoute(
-                           builder: (context) => ForgotPasswordScreen(),
+                           builder: (context) => const ForgotPasswordScreen(),
                          ),
                         );
                     },
