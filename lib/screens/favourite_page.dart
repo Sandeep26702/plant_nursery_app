@@ -10,6 +10,7 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Favorite', style: TextStyle(color: Colors.green)),
         centerTitle: true,
         actions: [

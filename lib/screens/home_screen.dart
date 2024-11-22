@@ -26,16 +26,14 @@ class _PlantHomePageState extends State<PlantHomePage> {
       'Lily',
       
     ]; 
-     var imgpath = [
-      'chery.jpeg',
-      'dhatura.jpg',
-      'marigold.webp',
-      'sunflower.jpg',
-      'lotos.jpeg',
-      'lily.jpeg',
-      
-      
-    ]; 
+    var imgpath = [
+  'assets/chery.jpeg',
+  'assets/dhatura.jpg',
+  'assets/marigold.webp',
+  'assets/sunflower.jpg',
+  'assets/lotos.jpeg',
+  'assets/lily.jpeg',
+];
     // var imgmaterials = [
     //   plantItem('Rose', 'images/rose.jpg'),
     //               plantItem('Lily', 'images/lily.jpg'),
@@ -46,6 +44,7 @@ class _PlantHomePageState extends State<PlantHomePage> {
     // ];
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Home', style: TextStyle(color: Colors.green)),
         centerTitle: true,
         actions: [

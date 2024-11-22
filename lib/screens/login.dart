@@ -1,11 +1,50 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'botom_navigator_bar.dart';
 import 'forget_password.dart';
-//import 'home_screen.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  // Function to handle login
+  Future<void> _login() async {
+    try {
+      // Attempt to log in with email and password
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+
+      // If login is successful, navigate to the next screen
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const NavigatorPage(),
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      // Handle errors here (e.g., wrong credentials)
+      String errorMessage = 'An error occurred. Please try again.';
+
+      if (e.code == 'user-not-found') {
+        errorMessage = 'No user found for that email.';
+      } else if (e.code == 'wrong-password') {
+        errorMessage = 'Wrong password provided.';
+      }
+
+      // Show error message in a SnackBar
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage)),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +52,7 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          //Background image
+          // Background image
           Image.asset(
             'assets/r1.jpg', // Add your image in the assets folder and update this path
             fit: BoxFit.cover,
@@ -40,7 +79,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // "Log in" Text
                   const Text(
                     "Log in",
@@ -51,14 +90,14 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  
+
                   // Input fields for Email/Phone and Password
                   TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.9),
                       label: const Text("Enter your Email"),
-                      hoverColor: const Color.fromARGB(255, 244, 239, 239),
                       hintText: 'Enter Number or Email',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -66,8 +105,9 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  
+
                   TextField(
+                    controller: _passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
@@ -80,22 +120,16 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // Log in button
                   ElevatedButton(
-                    onPressed: () {
-                      // Implement login functionality here
-                      Navigator.of(context).push(
-                          MaterialPageRoute(
-                           builder: (context) => const NavigatorPage(),
-                         ),
-                        );
-                    },
+                    onPressed: _login,
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15), backgroundColor: Colors.white.withOpacity(0.9),
+                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                      backgroundColor: Colors.white.withOpacity(0.9),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
-                      ), // button color
+                      ),
                     ),
                     child: const Text(
                       "Log in",
@@ -106,18 +140,18 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 20),
-                  
+
                   // Forgot Password link
                   TextButton(
                     onPressed: () {
-                      // Implement forgot password functionality here
+                      // Navigate to the Forgot Password screen
                       Navigator.of(context).push(
-                          MaterialPageRoute(
-                           builder: (context) => const ForgotPasswordScreen(),
-                         ),
-                        );
+                        MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       "Forgot password?",

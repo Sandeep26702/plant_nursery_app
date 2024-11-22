@@ -9,11 +9,11 @@ class ShoppingCart extends StatefulWidget {
 
 class _ShoppingCartState extends State<ShoppingCart> {
   List<Item> items = [
-    Item(name: 'Chery', price: 200, quantity: 1, image: 'chery.jpeg',),
-    Item(name: 'Marigold', price: 200, quantity: 1, image:'marigold.webp',),
-    Item(name: 'Sunflower', price: 200, quantity: 1, image: 'sunflower.jpg',),
-    Item(name: 'Dhatura', price: 200, quantity: 1, image:  'dhatura.jpg',),
-  ];
+  Item(name: 'Chery', price: 200, quantity: 1, image: 'assets/chery.jpeg'),
+  Item(name: 'Marigold', price: 200, quantity: 1, image: 'assets/marigold.webp'),
+  Item(name: 'Sunflower', price: 200, quantity: 1, image: 'assets/sunflower.jpg'),
+  Item(name: 'Dhatura', price: 200, quantity: 1, image: 'assets/dhatura.jpg'),
+];
 
   int get totalPrice =>
       items.fold(0, (total, current) => total + current.price * current.quantity);
